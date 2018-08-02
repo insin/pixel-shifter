@@ -1,7 +1,7 @@
 {
   "name": "pixel-shifter",
   "version": "1.0.0",
-  "description": "pixel-shifter React component",
+  "description": "A React component for pixel-shifting text elements",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -18,7 +18,9 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {},
+  "dependencies": {
+    "prop-types": "^15.5.7"
+  },
   "peerDependencies": {
     "react": "16.x"
   },

@@ -2,7 +2,7 @@ import expect from 'expect'
 import React from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
 
-import Component from 'src/'
+import PixelShifter from 'src/'
 
 describe('Component', () => {
   let node
@@ -15,9 +15,14 @@ describe('Component', () => {
     unmountComponentAtNode(node)
   })
 
-  it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
+  it('renders a div with a suitable transform style', () => {
+    let element = <PixelShifter x={1} y={2} reason="Testing">
+      <h1>Test</h1>
+    </PixelShifter>
+
+    render(element, node, () => {
+      let div = node.querySelector('div')
+      expect(div.style.transform).toEqual('translate(1px, 2px)')
     })
   })
 })

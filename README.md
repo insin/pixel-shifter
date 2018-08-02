@@ -1,16 +1,26 @@
-# pixel-shifter
+# `PixelShifter`
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+**[By Josh Comeau](https://twitter.com/JoshWComeau/status/1024993522070511616)**
 
-Describe pixel-shifter here.
+Text elements tend to have a bit of "built-in" side padding. This is especially noticeable with large headings. If you want things to align, it helps to offset things by a few pixels.
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+This component makes it easy to add slight pixel tweaks.
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+Because `reason` is a mandatory prop, it forces you to explain what it's doing, so that when you revisit this code in 4 months you'll know why you shifted it slightly.
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+## Usage
+
+```js
+<PixelShifter
+  x={-5}
+  reason="Optically align title with paragraphs below"
+>
+  <h1>Hello World</h1>
+</PixelShifter>
+```
+
+## Props
+
+- `x`: `Number` - number of pixels to horizontally tweak by
+- `y`: `Number` - number of pixels to vertically tweak by
+- `reason`: `String` *(required)* - explanation for using `PixelShifter`, for the benefit of future maintainers
